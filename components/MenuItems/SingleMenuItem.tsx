@@ -1,10 +1,11 @@
 import { View, Text, StyleSheet } from "react-native";
 import { yellow } from "./MenuItemsArray";
 
-const Item = ({ name }: { name: string }) => {
+const Item = ({ name, price }: { name: string, price: string }) => {
     return (
       <View style={menuStyles.menuContainer}>
         <Text style={menuStyles.listItems}>{name}</Text>
+        <Text style={menuStyles.listPrice}>{price}</Text>
       </View>
     );
   };
@@ -13,16 +14,19 @@ const Item = ({ name }: { name: string }) => {
 
   const menuStyles = StyleSheet.create({
     menuContainer: {
-      flex: 0.75,
-      paddingLeft: 22
-
+      flex: .75,
+    //   paddingLeft: 22,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      paddingTop: 19,
+      paddingHorizontal: 23
     },
-    menuText: {
-        fontSize: 40,
-        flexWrap: "wrap",
-        color: "white",
-      },
       listItems: {
+        color: yellow,
+        fontSize: 22,
+        marginBottom: 18
+      },
+      listPrice: {
         color: yellow,
         fontSize: 22,
       },

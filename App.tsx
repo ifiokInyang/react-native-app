@@ -16,9 +16,9 @@ export default function App() {
         {/* <Body /> */}
         <MenuItems />
       </View>
-      <View style={styles.footerContainer}>
+      {/* <View style={styles.footerContainer}>
         <Footer />
-      </View>
+      </View> */}
     </View>
   );
 }
@@ -37,6 +37,6 @@ const styles = StyleSheet.create({
   },
   bodyText: {
     flex: 11,
-    // backgroundColor: "red"
+    // backgroundColor: "blue"
   },
 });

@@ -1,14 +1,21 @@
 import React from "react";
-import { View, Text, ScrollView, StyleSheet, FlatList } from "react-native";
+import { View, Text, ScrollView, StyleSheet, FlatList, SectionList } from "react-native";
 import { ItemProp } from "../../utils/Interfaces";
-import { green, menuItemsToDisplay, yellow } from "./MenuItemsArray";
+import Footer from "../Footer";
+import { green, menuItemsArray, menuItemsToDisplay, yellow } from "./MenuItemsArray";
 import Item from "./SingleMenuItem";
 
 
 
-const MenuItems = () => {
-  const renderItem = ({item}:ItemProp) => <Item name={item.name} />;
+const Separator = () => <View style={menuStyles.separator} />
+const Header = () =>  <Text style={menuStyles.menuText}>View Menu</Text>
+const ListFooter = () => <Footer />
 
+
+const MenuItems = () => {
+  const renderItem = ({item}:ItemProp) => <Item name={item.name} price={item.price} />;
+
+  const renderItems = ({item}: ) => <Item name={item} />
   return (
     <View style={menuStyles.menuContainer}>
       {/* <ScrollView
@@ -16,8 +23,17 @@ const MenuItems = () => {
         horizontal={false}
         indicatorStyle={"white"}
       > */}
-        <Text style={menuStyles.menuText}>View Menu</Text>
-        <FlatList data={menuItemsToDisplay} renderItem={renderItem} />
+        {/* <FlatList data={menuItemsToDisplay} 
+        keyExtractor={Item => Item.id} 
+        renderItem={renderItem}
+        ItemSeparatorComponent={Separator}
+        ListHeaderComponent={Header}
+        ListFooterComponent={ListFooter}
+        /> */}
+        <SectionList 
+        sections={menuItemsArray}
+        renderItem={renderItems}
+        />
       {/* </ScrollView> */}
     </View>
   );
@@ -27,7 +43,7 @@ export default MenuItems;
 
 const menuStyles = StyleSheet.create({
   menuContainer: {
-    flex: 0.75,
+    flex: 1,
   },
   scrollView: {
     padding: 40,
@@ -43,4 +59,8 @@ const menuStyles = StyleSheet.create({
     color: yellow,
     fontSize: 22,
   },
+  separator: {
+    borderBottomWidth: 1,
+    borderColor: "#EDEFEE"
+  }
 });
