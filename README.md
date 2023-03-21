@@ -1,6 +1,9 @@
 #### 
 
-#### Available Scripts
+## Available Scripts
+
+`yarn`
+## Installs dependencies
 
 `yarn start`
 
