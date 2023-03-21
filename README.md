@@ -21,6 +21,6 @@
 
 ### PORT
 
-# Android and iOS Emulator (App is running on)
+### Android and iOS Emulator (App is running on)
 
-# exp://192.168.0.60:19000
+### exp://192.168.0.60:19000
