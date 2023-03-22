@@ -1,8 +1,9 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import Body from "./components/Body";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
+import Body from "./components/Body/Body";
+import Footer from "./components/Footer/Footer";
+import FeedbackForm from "./components/Form/Form";
+import Header from "./components/Header/Header";
 import MenuItems from "./components/MenuItems/MenuItems";
 
 export default function App() {
@@ -13,8 +14,8 @@ export default function App() {
       </View>
 
       <View style={styles.bodyText}>
-        {/* <Body /> */}
-        <MenuItems />
+        <Body />
+        {/* <MenuItems /> */}
       </View>
       {/* <View style={styles.footerContainer}>
         <Footer />
@@ -22,6 +23,16 @@ export default function App() {
     </View>
   );
 }
+
+// export default function App (){
+//     return (
+//       <>
+//         <View style={styles.container}>
+//           <FeedbackForm />
+//         </View>
+//       </>
+//     )
+// }
 
 const styles = StyleSheet.create({
   container: {
@@ -34,6 +45,7 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     flex: 0.5,
+  
   },
   bodyText: {
     flex: 11,

@@ -1,7 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
+import { SectionListProps } from "../../utils/Interfaces";
 import { yellow } from "./MenuItemsArray";
 
-const Item = ({ name, price }: { name: string, price: string }) => {
+// const Item = ({ name, price }: { name: string, price: string }) => {
+    const Item =({ name, price }: {name: string, price: string}) => {
     return (
       <View style={menuStyles.menuContainer}>
         <Text style={menuStyles.listItems}>{name}</Text>
